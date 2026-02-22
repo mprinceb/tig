@@ -1,0 +1,33 @@
+# >>> gitlens-tui >>>
+# gitlens-tui block managed by install.sh.
+# Uninstall guidance: delete this block, including marker lines.
+set line-graphics = ascii
+set mouse = yes
+set show-rev-graph = yes
+set diff-options = --ignore-space-change
+set blame-options = -C -C -C
+set ignore-case = smart-case
+bind generic q quit
+bind generic <C-r> refresh
+bind main J move-down
+bind main K move-up
+
+# Replace old alias workflows with tig bindings.
+bind generic s view-status
+bind generic l view-main
+bind generic r view-refs
+bind generic y view-stash
+bind generic f view-reflog
+bind generic b view-blame
+bind generic g view-grep
+bind generic p parent
+bind generic n find-next
+bind generic N find-prev
+
+bind status u status-update
+bind status U status-revert
+
+bind generic A ?git commit --amend --no-edit
+bind refs C ?git checkout "%(refname)"
+bind refs R ?git rebase "%(refname)"
+# <<< gitlens-tui <<<
